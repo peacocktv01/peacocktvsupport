@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Peacock TV Customer Support: A Complete Guide</title>
+<style>
+  /* RESET */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f9ff;
+    color: #222;
+    line-height: 1.6;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* HEADER */
+  header {
+    background: #004080;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+  .logo {
+    display: flex; align-items: center;
+    font-weight: 700; font-size: 1.4rem;
+    letter-spacing: 2px;
+    user-select: none;
+  }
+  .logo svg {
+    width: 36px; height: 36px;
+    margin-right: 0.5rem;
+    fill: #00aaff;
+    animation: logo-spin 10s linear infinite;
+  }
+  @keyframes logo-spin {
+    from {transform: rotate(0);}
+    to {transform: rotate(360deg);}
+  }
+  nav {
+    display: flex;
+    gap: 1rem;
+  }
+  nav a {
+    background: #0073e6;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    color: white;
+    box-shadow: 0 2px 6px rgba(0,115,230,0.7);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  nav a:hover, nav a:focus {
+    background: #005bb5;
+    box-shadow: 0 4px 12px rgba(0,91,181,0.8);
+  }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, #00aaff 0%, #004080 100%);
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+    animation: slideInDown 1.5s ease forwards;
+  }
+  /* marquee effect */
+  .marquee {
+    white-space: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  .marquee span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 20s linear infinite;
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #cceeff;
+  }
+  @keyframes marquee {
+    0% { transform: translateX(0%);}
+    100% {transform: translateX(-100%);}
+  }
+  @keyframes slideInDown {
+    0% {opacity: 0; transform: translateY(-50px);}
+    100% {opacity: 1; transform: translateY(0);}
+  }
+
+  /* CONTAINER */
+  .container {
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+
+  /* SECTIONS */
+  section {
+    background: white;
+    padding: 1.5rem 2rem;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.07);
+    position: relative;
+    animation: boxSlideIn 1s ease forwards;
+  }
+  section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #004080;
+    border-left: 6px solid #00aaff;
+    padding-left: 0.75rem;
+    box-shadow: 1px 1px 5px rgba(0, 170, 255, 0.3);
+  }
+  section p, section ol {
+    font-size: 1rem;
+    color: #333;
+  }
+  section ol {
+    padding-left: 1.5rem;
+  }
+  section ol li {
+    margin-bottom: 0.5rem;
+  }
+  section ul {
+    padding-left: 1.5rem;
+  }
+  section ul li {
+    margin-bottom: 0.5rem;
+  }
+
+  @keyframes boxSlideIn {
+    0% {opacity: 0; transform: translateX(-40px);}
+    100% {opacity: 1; transform: translateX(0);}
+  }
+
+  /* TEXT ANIMATION for highlights */
+  .highlight {
+    position: relative;
+    display: inline-block;
+    color: #004080;
+    font-weight: 700;
+    overflow: hidden;
+  }
+  .highlight::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 100%; height: 3px;
+    background: #00aaff;
+    animation: underline-slide 2s ease forwards;
+  }
+  @keyframes underline-slide {
+    0% {width: 0;}
+    100% {width: 100%;}
+  }
+
+  /* BACK TO TOP BUTTON */
+  #topBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #004080;
+    color: white;
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 9999;
+  }
+  #topBtn.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  #topBtn:hover {
+    background: #00aaff;
+    box-shadow: 0 6px 14px rgba(0,170,255,0.8);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    header {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    nav {
+      width: 100%;
+      justify-content: space-around;
+      margin-top: 0.5rem;
+    }
+    .hero h1 {
+      font-size: 1.8rem;
+    }
+    section {
+      padding: 1rem 1rem;
+    }
+  }
+  @media (max-width: 480px) {
+    .hero h1 {
+      font-size: 1.5rem;
+    }
+    nav a {
+      padding: 0.4rem 0.8rem;
+      font-size: 0.9rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo" aria-label="Peacock TV Logo">
+    <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="32" cy="32" r="30" stroke="#00aaff" stroke-width="4" fill="none"/>
+      <path d="M20 40 L32 20 L44 40 Z" fill="#00aaff"/>
+      <circle cx="32" cy="32" r="10" fill="#004080"/>
+    </svg>
+    PEACOCK TV
+  </div>
+  <nav role="navigation" aria-label="Primary navigation">
+    <a href="#" tabindex="0">Home</a>
+    <a href="#" tabindex="0">Login</a>
+    <a href="#" tabindex="0">Support</a>
+    <a href="#" tabindex="0">Activate</a>
+  </nav>
+</header>
+
+<section class="hero" role="banner">
+  <h1>Peacock TV Customer Support: A Complete Guide</h1>
+  <div class="marquee" aria-live="polite" aria-atomic="true">
+    <span>Get Help • Troubleshoot • Billing • Account Issues • Streaming Support • Parental Controls • Contact Info •</span>
+  </div>
+</section>
+
+<main class="container" role="main">
+  <section aria-labelledby="understanding-support">
+    <h2 id="understanding-support" class="highlight">Understanding Peacock TV Customer Support</h2>
+    <p>Peacock TV’s support infrastructure is designed to assist users at every step of their journey — from account setup to troubleshooting playback problems. Whether you’re using the free version or subscribed to the premium tiers, Peacock TV customer support ensures you can enjoy a seamless viewing experience.</p>
+    <ul>
+      <li>A comprehensive Help Center</li>
+      <li>Automated virtual assistance</li>
+      <li>Live chat options (for some issues)</li>
+      <li>Email-based inquiries</li>
+      <li>Social media responsiveness</li>
+    </ul>
+    <p>Peacock TV support operates through multiple channels to ensure that users with varying levels of technical expertise can get help quickly and efficiently.</p>
+  </section>
+
+  <section aria-labelledby="why-need-support">
+    <h2 id="why-need-support" class="highlight">Why You Might Need Peacock TV Customer Service</h2>
+    <ol>
+      <li><strong>Account and Login Problems</strong><br />Difficulty accessing accounts including password resets, login failures, or locked accounts.</li>
+      <li><strong>Subscription and Billing Questions</strong><br />Clarifications on charges, subscriptions, and cancellations.</li>
+      <li><strong>Streaming and Playback Issues</strong><br />Buffering, resolution problems, or playback errors.</li>
+      <li><strong>Device Compatibility</strong><br />Ensuring your device supports Peacock TV app properly.</li>
+      <li><strong>Parental Controls and Profiles</strong><br />Setting up child-safe profiles and content restrictions.</li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="how-to-contact">
+    <h2 id="how-to-contact" class="highlight">How to Contact Peacock TV Customer Support</h2>
+    <p>Peacock TV offers multiple ways to get help:</p>
+    <ul>
+      <li><strong>Help Center:</strong> Comprehensive FAQs and guides.</li>
+      <li><strong>Virtual Assistant:</strong> 24/7 automated help for common issues.</li>
+      <li><strong>Live Chat:</strong> Available sometimes for complex problems.</li>
+      <li><strong>Email Support:</strong> For non-urgent matters like billing.</li>
+      <li><strong>Social Media Assistance:</strong> Twitter and Facebook interactions.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="tips-communication">
+    <h2 id="tips-communication" class="highlight">Tips for Effective Communication with Peacock TV Customer Service</h2>
+    <ol>
+      <li>Be Specific: Include device, OS, app version, and error description.</li>
+      <li>Include Screenshots (If Possible): Visual aids help diagnosis.</li>
+      <li>Stay Patient and Polite: Positive attitude speeds resolutions.</li>
+      <li>Use the Right Channel: Choose help avenue based on issue urgency.</li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="not-satisfied">
+    <h2 id="not-satisfied" class="highlight">What to Do If You're Not Satisfied with Peacock TV Support</h2>
+    <ul>
+      <li>Reopen and escalate support tickets.</li>
+      <li>Reach out via alternate channels (social media/email).</li>
+      <li>Keep polite and document interactions clearly.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="community-role">
+    <h2 id="community-role" class="highlight">The Role of the Peacock TV Community</h2>
+    <p>Beyond official support, user communities on forums and social media can offer faster insights and troubleshooting tips for common issues or outages.</p>
+  </section>
+
+  <section aria-labelledby="smooth-experience">
+    <h2 id="smooth-experience" class="highlight">Ensuring a Smooth Streaming Experience</h2>
+    <ul>
+      <li>Keep your app and devices updated regularly</li>
+      <li>Clear cache and cookies periodically</li>
+      <li>Ensure stable, high-speed internet connection</li>
+      <li>Log out from unused devices</li>
+      <li>Review account settings and billing details</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="final-thoughts">
+    <h2 id="final-thoughts" class="highlight">Final Thoughts</h2>
+    <p>Responsive and reliable Peacock TV customer support, combined with knowing how to use the right contact channels, helps ensure uninterrupted access to your favorite content.</p>
+  </section>
+</main>
+
+<button id="topBtn" aria-label="Back to top">↑ Top</button>
+
+<script>
+  // Back to top button show/hide
+  const topBtn = document.getElementById('topBtn');
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+      topBtn.classList.add('show');
+    } else {
+      topBtn.classList.remove('show');
+    }
+  });
+
+  topBtn.addEventListener('click', () => {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  });
+</script>
+
+</body>
+</html>
